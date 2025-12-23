@@ -9,7 +9,7 @@ const ttFont = CMUTypewriter
 export default function Home() {
 	return (
 		<div className={`flex min-h-screen bg-[#FCF8F3]`}>
-			<div className="flex min-h-screen w-full max-w-3xl m-10 mt-16 md:m-36 text-black flex-col gap-y-3">
+			<div className="flex min-h-screen w-full max-w-3xl p-10 md:m-36 text-black flex-col gap-y-3">
 				<h3 className={`text-5xl ${serifFont.className}`}>Hrushikesh Emkay</h3>
 				<div className={`${serifFont.className} text-xl space-y-5`}>
 					<p className="my-3">
@@ -22,12 +22,10 @@ export default function Home() {
 							<p>Interests</p>
 						</div>
 						<ul className="ml-12 list-disc">
-							<li>Concurrency and Distributed Programming</li>
-							<li>Applications of Technology in Business</li>
-							<li>Supply Chains, Operations and Strategy</li>
-							<li>History</li>
-							<li>Policy</li>
-
+							<li>Concurrency and Distributed Systems</li>
+							<li>Technology in Business</li>
+							<li>Finance, Strategy and Operations</li>
+							<li>History, Politics and Policy</li>
 						</ul>
 					</div>
 
@@ -38,19 +36,19 @@ export default function Home() {
 						</div>
 						<ul className={`ml-8 list-none`}>
 							<li className="flex items-center">
-								<span className={`w-56 ${ttFont.className}`}>{`{Python, Go}`}</span>
+								<span className={`w-42 ${ttFont.className}`}>{`{Python, Go}`}</span>
 								<span className="w-6 text-center mx-3">→</span>
-								<span>Backend Systems</span>
+								<span>Backend</span>
 							</li>
 							<li className="flex items-center">
-								<span className={`w-56 ${ttFont.className}`}>{`{Next.js, Typescript}`}</span>
+								<span className={`w-42 ${ttFont.className}`}>{`{Next.js, TS}`}</span>
 								<span className="w-6 text-center mx-3">→</span>
 								<span>Frontend</span>
 							</li>
 							<li className="flex items-center">
-								<span className={`w-56 ${ttFont.className}`}>{`{Java, C}`}</span>
+								<span className={`w-42 ${ttFont.className}`}>{`{Java, C}`}</span>
 								<span className="w-6 text-center mx-3">→</span>
-								<span>General Purpose</span>
+								<span>General</span>
 							</li>
 						</ul>
 					</div>
@@ -61,10 +59,10 @@ export default function Home() {
 							<p>References</p>
 						</div>
 						<div className={`text-blue-600 space-x-5 ${ttFont.className}`}>
-							<a className="hover:text-purple-900" target="_blank" href="https://x.com/rsh_emk">[x]</a>
-							<a className="hover:text-purple-900" target="_blank" href="https://github.com/rsh-e">[github]</a>
-							<a className="hover:text-purple-900" target="_blank" href="https://linkedin.com/in/rsh-e">[linkedin]</a>
-							<a className="hover:text-purple-900" target="_blank" href="https://rsh-emk.medium.com">[medium]</a>
+							<a className="hover:text-purple-900" target="_blank" href="https://x.com/rsh_emk">[X]</a>
+							<a className="hover:text-purple-900" target="_blank" href="https://github.com/rsh-e">[GitHub]</a>
+							<a className="hover:text-purple-900" target="_blank" href="https://linkedin.com/in/rsh-e">[LinkedIn]</a>
+							<a className="hover:text-purple-900" target="_blank" href="https://rsh-emk.medium.com">[Medium]</a>
 						</div>
 					</div>
 				</div>
