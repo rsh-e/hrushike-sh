@@ -9,7 +9,7 @@ const ttFont = CMUTypewriter
 export default function Home() {
 	return (
 		<div className={`flex min-h-screen bg-white`}>
-			<div className="flex min-h-screen w-full max-w-3xl m-36 text-black flex-col gap-y-3">
+			<div className="flex min-h-screen w-full max-w-3xl m-10 mt-16 md:m-36 text-black flex-col gap-y-3">
 				<h3 className={`text-5xl ${serifFont.className}`}>Hrushikesh Emkay</h3>
 				<div className={`${serifFont.className} text-xl space-y-5`}>
 					<p className="my-3">
@@ -17,7 +17,7 @@ export default function Home() {
 						I study Computer Science at the University of Bristol.
 					</p>
 					<div className="flex flex-col space-y-0.5">
-						<div className="flex flex-row gap-x-5 font-semibold">
+						<div className="flex flex-row gap-x-5 font-bold">
 							<p>1</p>
 							<p>Interests</p>
 						</div>
@@ -32,15 +32,15 @@ export default function Home() {
 					</div>
 
 					<div className="flex flex-col space-y-0.5">
-						<div className="flex flex-row gap-x-5 font-semibold">
+						<div className="flex flex-row gap-x-5 font-bold">
 							<p>2</p>
 							<p>Languages and Frameworks</p>
 						</div>
-						<ul className={`ml-12 list-disc ${ttFont.className}`}>
-							<li>python -- fastapi, selenium</li>
-							<li>js/ts -- next.js, react</li>
-							<li>golang</li>
-							<li>java</li>
+						<ul className={`ml-12 list-disc`}>
+							<li>Python -- FastAPI, Selenium</li>
+							<li>JavaScript/TypeScript -- Next.js, React</li>
+							<li>Golang</li>
+							<li>Java</li>
 						</ul>
 					</div>
 
@@ -50,10 +50,10 @@ export default function Home() {
 							<p>References</p>
 						</div>
 						<div className={`text-blue-600 space-x-5 ${ttFont.className}`}>
-							<a href="">[x]</a>
-							<a href="">[github]</a>
-							<a href="">[linkedin]</a>
-							<a href="">[medium]</a>
+							<a className="hover:text-purple-900" href="x.com/rsh-e">[x]</a>
+							<a className="hover:text-purple-600" href="github.com/rsh-e">[github]</a>
+							<a className="hover:text-purple-600" href="linkedin.com/rsh-e">[linkedin]</a>
+							<a className="hover:text-purple-600" href="rsh-emk.medium.com">[medium]</a>
 						</div>
 					</div>
 				</div>
