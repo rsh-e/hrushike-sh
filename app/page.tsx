@@ -8,7 +8,7 @@ const ttFont = CMUTypewriter
 
 export default function Home() {
 	return (
-		<div className={`flex min-h-screen bg-white`}>
+		<div className={`flex min-h-screen bg-[#FCF8F3]`}>
 			<div className="flex min-h-screen w-full max-w-3xl m-10 mt-16 md:m-36 text-black flex-col gap-y-3">
 				<h3 className={`text-5xl ${serifFont.className}`}>Hrushikesh Emkay</h3>
 				<div className={`${serifFont.className} text-xl space-y-5`}>
@@ -36,11 +36,22 @@ export default function Home() {
 							<p>2</p>
 							<p>Languages and Frameworks</p>
 						</div>
-						<ul className={`ml-12 list-disc`}>
-							<li>Python -- FastAPI, Selenium</li>
-							<li>JavaScript/TypeScript -- Next.js, React</li>
-							<li>Golang</li>
-							<li>Java</li>
+						<ul className={`ml-8 list-none`}>
+							<li className="flex items-center">
+								<span className={`w-56 ${ttFont.className}`}>{`{Python, Go}`}</span>
+								<span className="w-6 text-center mx-3">→</span>
+								<span>Backend Systems</span>
+							</li>
+							<li className="flex items-center">
+								<span className={`w-56 ${ttFont.className}`}>{`{Next.js, Typescript}`}</span>
+								<span className="w-6 text-center mx-3">→</span>
+								<span>Frontend</span>
+							</li>
+							<li className="flex items-center">
+								<span className={`w-56 ${ttFont.className}`}>{`{Java, C}`}</span>
+								<span className="w-6 text-center mx-3">→</span>
+								<span>General Purpose</span>
+							</li>
 						</ul>
 					</div>
 
