@@ -50,10 +50,10 @@ export default function Home() {
 							<p>References</p>
 						</div>
 						<div className={`text-blue-600 space-x-5 ${ttFont.className}`}>
-							<a className="hover:text-purple-900" href="x.com/rsh-e">[x]</a>
-							<a className="hover:text-purple-600" href="github.com/rsh-e">[github]</a>
-							<a className="hover:text-purple-600" href="linkedin.com/rsh-e">[linkedin]</a>
-							<a className="hover:text-purple-600" href="rsh-emk.medium.com">[medium]</a>
+							<a className="hover:text-purple-900" target="_blank" href="https://x.com/rsh_emk">[x]</a>
+							<a className="hover:text-purple-900" target="_blank" href="https://github.com/rsh-e">[github]</a>
+							<a className="hover:text-purple-900" target="_blank" href="https://linkedin.com/in/rsh-e">[linkedin]</a>
+							<a className="hover:text-purple-900" target="_blank" href="https://rsh-emk.medium.com">[medium]</a>
 						</div>
 					</div>
 				</div>
