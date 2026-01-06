@@ -8,7 +8,7 @@ const ttFont = CMUTypewriter
 
 export default function Home() {
 	return (
-		<div className={`flex min-h-screen bg-[#FCF8F3]`}>
+		<div className={`flex min-h-screen bg-[#FAFAFA]`}>
 			<div className="flex min-h-screen w-full max-w-3xl p-10 md:m-36 text-black flex-col gap-y-3">
 				<h3 className={`text-5xl ${serifFont.className}`}>Hrushikesh Emkay</h3>
 				<div className={`${serifFont.className} text-xl space-y-5`}>
@@ -21,7 +21,7 @@ export default function Home() {
 							<p>1</p>
 							<p>Interests</p>
 						</div>
-						<ul className="ml-12 list-disc">
+						<ul className="ml-12 list-none">
 							<li>Concurrency and Distributed Systems</li>
 							<li>Technology in Business</li>
 							<li>Finance, Strategy and Operations</li>
@@ -59,9 +59,9 @@ export default function Home() {
 							<p>References</p>
 						</div>
 						<div className={`text-blue-600 space-x-5 ${ttFont.className}`}>
-							<a className="hover:text-purple-900" target="_blank" href="https://x.com/rsh_emk">[X]</a>
+							{/* //							<a className="hover:text-purple-900" target="_blank" href="https://x.com/rsh_emk">[X]</a> */}
 							<a className="hover:text-purple-900" target="_blank" href="https://github.com/rsh-e">[GitHub]</a>
-							<a className="hover:text-purple-900" target="_blank" href="https://linkedin.com/in/rsh-e">[LinkedIn]</a>
+							{/* <a className="hover:text-purple-900" target="_blank" href="https://linkedin.com/in/rsh-e">[LinkedIn]</a> */}
 							<a className="hover:text-purple-900" target="_blank" href="https://rsh-emk.medium.com">[Medium]</a>
 						</div>
 					</div>
