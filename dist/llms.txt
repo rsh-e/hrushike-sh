@@ -1,0 +1,17 @@
+# Hrushikesh Emkay (Rishi)
+
+Personal site at https://hrushike.sh.
+MEng Computer Science, University of Bristol (3rd year).
+
+## Pages
+- / — identity · On This Day (history + plate)
+- /now.html — current status
+- /projects.html — Avon, SEC RAG, Game of Life, Scotland Yard AI
+- /reading.html — books by year
+- /links.html — link directory
+- /resume.html — CV
+- /colophon.html — how to edit
+- /lab/dossier.html — dossier lab layout
+
+## Content source
+data/site.json → build.mjs → static HTML

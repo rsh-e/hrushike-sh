@@ -1,0 +1,300 @@
+/* Pure immersion labs — not the main site chrome */
+
+/* —— LAB: dossier —— */
+.lab-dossier {
+  --bg: #121414;
+  --card: #1a1d1e;
+  --border: #2e3436;
+  --fg: #d3d7cf;
+  --muted: #888a85;
+  --hazard: #cc0000;
+  --olive: #555753;
+  --ochre: #c4a000;
+  margin: 0;
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.55;
+  padding: 1rem clamp(0.75rem, 2vw, 1.5rem) 2rem;
+}
+
+.lab-dossier a {
+  color: var(--ochre);
+}
+
+.lab-dossier a:hover {
+  background: #24292a;
+}
+
+.lab-dossier .lab-top {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.5rem;
+  border: 1px solid var(--border);
+  padding: 0.5rem 0.75rem;
+  margin-bottom: 0.75rem;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+}
+
+.lab-dossier .lab-exit {
+  color: var(--hazard);
+}
+
+.lab-dossier h1 {
+  margin: 0 0 0.35rem;
+  font-size: 1.45rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.lab-dossier .lab-meta {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 0.75rem;
+  color: var(--muted);
+  margin-bottom: 1rem;
+}
+
+.lab-dossier .bento {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 0.65rem;
+}
+
+.lab-dossier .card {
+  border: 1px solid var(--border);
+  background: var(--card);
+  padding: 0.75rem;
+  min-width: 0;
+}
+
+.lab-dossier .card.span-5 { grid-column: span 5; }
+.lab-dossier .card.span-7 { grid-column: span 7; }
+.lab-dossier .card.span-4 { grid-column: span 4; }
+.lab-dossier .card.span-8 { grid-column: span 8; }
+.lab-dossier .card.span-12 { grid-column: span 12; }
+
+.lab-dossier .card h2 {
+  margin: 0 0 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  border-left: 3px solid var(--hazard);
+  padding-left: 0.4rem;
+}
+
+.lab-dossier table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+}
+
+.lab-dossier th,
+.lab-dossier td {
+  text-align: left;
+  vertical-align: top;
+  padding: 0.25rem 0.4rem 0.25rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.lab-dossier th {
+  width: 7rem;
+  color: var(--muted);
+  font-weight: 400;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 0.78rem;
+}
+
+.lab-dossier .alert {
+  border-left: 3px solid var(--hazard);
+  background: var(--card);
+  padding: 0.65rem 0.75rem;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 0.8rem;
+  color: var(--ochre);
+}
+
+.lab-dossier .stamp {
+  display: inline-block;
+  border: 2px solid var(--hazard);
+  color: var(--hazard);
+  padding: 0.15rem 0.4rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  transform: rotate(-6deg);
+  margin: 0.5rem 0;
+}
+
+.lab-dossier .legal {
+  margin-top: 1.25rem;
+  font-size: 0.62rem;
+  line-height: 1.4;
+  color: var(--olive);
+  font-family: "Courier New", Courier, monospace;
+  text-transform: uppercase;
+}
+
+.lab-dossier .redacted {
+  background: #000;
+  color: transparent;
+  user-select: none;
+}
+
+.lab-dossier .redacted:hover {
+  background: transparent;
+  color: inherit;
+}
+
+@media (max-width: 720px) {
+  .lab-dossier .card.span-5,
+  .lab-dossier .card.span-7,
+  .lab-dossier .card.span-4,
+  .lab-dossier .card.span-8 {
+    grid-column: span 12;
+  }
+}
+
+/* —— LAB: darpa / aether —— */
+.lab-darpa {
+  --bg: #050705;
+  --dim: #0d120d;
+  --core: #33ff33;
+  --glow: rgba(51, 255, 51, 0.15);
+  --muted: #1e991e;
+  --critical: #ff3333;
+  --warn: #ffaa00;
+  margin: 0;
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--core);
+  font-family: "Courier New", Courier, "SF Mono", monospace;
+  font-size: 0.875rem;
+  line-height: 1.4;
+  padding: 1rem;
+  text-shadow: 0 0 2px var(--core);
+}
+
+.lab-darpa .frame {
+  border: 1px solid var(--muted);
+  background: var(--dim);
+  padding: 1rem;
+  max-width: 920px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.lab-darpa .class-bar {
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.72rem;
+  border: 1px solid var(--muted);
+  padding: 0.35rem;
+  margin-bottom: 0.75rem;
+  color: var(--warn);
+}
+
+.lab-darpa h1 {
+  margin: 0 0 0.35rem;
+  font-size: 1.15rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.lab-darpa .sys {
+  color: var(--muted);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  margin-bottom: 0.85rem;
+}
+
+.lab-darpa a {
+  color: var(--core);
+  text-decoration: none;
+  border: 1px solid var(--muted);
+  padding: 0.1rem 0.35rem;
+}
+
+.lab-darpa a:hover {
+  background: var(--core);
+  color: var(--bg);
+  text-shadow: none;
+  transition: none;
+}
+
+.lab-darpa h2 {
+  margin: 1rem 0 0.4rem;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--warn);
+  border-bottom: 1px solid var(--muted);
+  padding-bottom: 0.2rem;
+}
+
+.lab-darpa table.system-grid {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 0.35rem 0 0.75rem;
+}
+
+.lab-darpa table.system-grid th,
+.lab-darpa table.system-grid td {
+  border: 1px solid var(--muted);
+  padding: 0.4rem 0.5rem;
+  text-align: left;
+  vertical-align: top;
+}
+
+.lab-darpa table.system-grid th {
+  width: 8rem;
+  color: var(--muted);
+  font-weight: 400;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+}
+
+.lab-darpa .ascii-rule {
+  color: var(--muted);
+  margin: 0.75rem 0;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.lab-darpa .lab-exit {
+  display: inline-block;
+  margin-top: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.lab-darpa .crt-scanlines {
+  display: block;
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%);
+  background-size: 100% 4px;
+  z-index: 9999;
+  pointer-events: none;
+}
+
+.lab-darpa ul {
+  margin: 0.25rem 0;
+  padding-left: 1.1rem;
+}
+
+.lab-darpa li {
+  margin: 0.15rem 0;
+}

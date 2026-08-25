@@ -1,0 +1,150 @@
+{
+  "updated": "2026-08-25u",
+  "hitCounterBase": 1337,
+  "domain": "https://hrushike.sh",
+  "defaults": {
+    "tone": "dry"
+  },
+  "identity": {
+    "name": "Hrushikesh Emkay",
+    "aka": "Rishi",
+    "school": "University of Bristol",
+    "program": "MEng Computer Science",
+    "year": "3rd year",
+    "location": "Bristol, UK",
+    "tagline": "Systems, software, and a soft spot for history."
+  },
+  "interests": [
+    "Concurrency and distributed systems",
+    "Technology in business",
+    "Finance, strategy and operations",
+    "History"
+  ],
+  "stack": [
+    { "tools": "Python, Go", "role": "Backend / systems" },
+    { "tools": "Java", "role": "Coursework / AI projects" },
+    { "tools": "TypeScript, Next.js", "role": "Frontend when needed" }
+  ],
+  "contacts": {
+    "github": "https://github.com/rsh-e",
+    "medium": "https://rsh-emk.medium.com",
+    "x": "https://x.com/rsh_emk",
+    "letterboxd": "TODO"
+  },
+  "now": [
+    "Summer — finishing a paid internship on Avon at Bristol CS",
+    "Building a RAG pipeline over SEC 10-K filings with grounded citations",
+    "Next up on that: hybrid search, re-ranking, then a proper frontend",
+    "Scored 1000/1000 on the AWS AI Practitioner exam",
+    "Reading Midnight's Children by Salman Rushdie"
+  ],
+  "projects": [
+    {
+      "year": "2025–26",
+      "name": "Avon",
+      "status": "shipped / ongoing",
+      "blurb": "Git-based coursework platform for Bristol CS: lecturers upload a skeleton zip, every student gets a provisioned repo, tests run at the deadline. Integrates with Blackboard, Moodle, and Canvas — kills the download-zip / upload-zip / something-breaks loop.",
+      "url": "https://github.com/avon-vle/avon",
+      "why": "Challenging systems work that makes coursework less painful for everyone involved."
+    },
+    {
+      "year": "2026",
+      "name": "SEC 10-K RAG",
+      "status": "wip",
+      "blurb": "Parser and citation-aware chunker for annual filings (section + item). Eval harness for recall, precision, and MRR. Next: hybrid semantic + keyword search, re-ranking, then UI.",
+      "url": "#",
+      "why": "Fun, hard retrieval problem with a clear correctness bar."
+    },
+    {
+      "year": "2025",
+      "name": "Distributed Game of Life",
+      "status": "shipped",
+      "blurb": "Concurrency & distributed systems coursework: Game of Life with halo exchange, fault tolerance, running concurrently across machines.",
+      "url": "#",
+      "why": "The first time distributed systems clicked as something you feel in the failure modes."
+    },
+    {
+      "year": "2024",
+      "name": "Scotland Yard AI",
+      "status": "shipped",
+      "blurb": "First-year Java project: MiniMax agents for detectives and Mr. X, search to depth ~8 with assorted optimisations.",
+      "url": "#",
+      "why": "A clean puzzle where search quality is the whole game."
+    }
+  ],
+  "reading": [
+    {
+      "year": "2026",
+      "items": [
+        { "title": "Midnight's Children", "author": "Salman Rushdie", "status": "reading" }
+      ]
+    }
+  ],
+  "links": [
+    {
+      "title": "TODO — add links you actually send people",
+      "url": "#",
+      "note": "Remind Rishi later"
+    }
+  ],
+  "resume": {
+    "education": [
+      {
+        "when": "2024 — present",
+        "where": "University of Bristol",
+        "what": "MEng Computer Science (3rd year)",
+        "detail": "Year 2 average: 76%."
+      }
+    ],
+    "experience": [
+      {
+        "when": "Jun 2025 — Aug 2025",
+        "where": "School of Computer Science, University of Bristol",
+        "what": "Software engineering intern (Avon)",
+        "detail": "Built and shipped Avon, a VLE-integrated Git coursework platform. Earlier part-time work on the same project Oct 2024 – Jun 2025."
+      },
+      {
+        "when": "2024 — 2025",
+        "where": "Data Annotation",
+        "what": "RLHF / model training (programming)",
+        "detail": "Reinforcement learning from human feedback work training frontier models on programming tasks."
+      },
+      {
+        "when": "2024 — present",
+        "where": "University of Bristol Hindu Society",
+        "what": "Sanskar (Cultural Representative)",
+        "detail": "Organised and hosted discussions on Buddhism with strong turnout."
+      }
+    ],
+    "skills": [
+      "Python",
+      "Java",
+      "Go",
+      "TypeScript",
+      "Distributed systems",
+      "Project leadership"
+    ]
+  },
+  "tones": {
+    "optimistic": {
+      "label": "optimistic",
+      "blurb": "Glad you found this. Things are being built.",
+      "footer": "thanks for visiting — go make something"
+    },
+    "deadpan": {
+      "label": "deadpan",
+      "blurb": "Personal site. Facts below.",
+      "footer": "end of document"
+    },
+    "dry": {
+      "label": "dry",
+      "blurb": "Another homepage on the internet. This one happens to be mine.",
+      "footer": "you know where the door is"
+    },
+    "earnest": {
+      "label": "earnest",
+      "blurb": "I like hard problems, clean systems, and reading about the past.",
+      "footer": "always happy to talk about systems or history"
+    }
+  }
+}

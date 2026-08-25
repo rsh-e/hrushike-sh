@@ -1,36 +1,63 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# hrushike.sh
 
-## Getting Started
+Personal site for Hrushikesh Emkay (Rishi). Static HTML on Netlify. Utilitarian white pages — dense tables, blue links, local CMU fonts.
 
-First, run the development server:
+**Live:** https://hrushike.sh
+
+## Update content (no AI needed)
+
+1. Edit [`data/site.json`](data/site.json) — identity, contacts, `now`, `projects`, `links`, `resume`, `hitCounterBase`, `updated`.
+2. Build:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+bun run build
+# or: node build.mjs
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+3. Commit and push. Netlify runs the same build and publishes `dist/`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+That is the whole content workflow. Do not edit generated HTML under `dist/` by hand.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Project rows
 
-## Learn More
+```json
+{
+  "year": "2026",
+  "name": "My thing",
+  "status": "wip",
+  "blurb": "One sentence.",
+  "url": "https://github.com/rsh-e/…"
+}
+```
 
-To learn more about Next.js, take a look at the following resources:
+Rows whose name/blurb contain `TODO` render in amber so placeholders are obvious.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Local preview
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+bun run build
+npx serve dist -p 4173
+```
 
-## Deploy on Vercel
+## Layout
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+| Path | Role |
+|------|------|
+| `data/site.json` | **All** site copy |
+| `build.mjs` | Renders pages into `dist/` |
+| `static/css/site.css` | Styles |
+| `static/js/site.js` | Hit counter + keyboard easter eggs |
+| `static/fonts/` | CMU Serif + Typewriter |
+| `netlify.toml` | Build + publish dir |
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Themes & tones
+
+- **Themes** (`t` or `1`–`3`): **academic** / **dossier light** / **dossier dark**
+- Tone locked to **dry**
+- Lab: [/lab/dossier.html](/lab/dossier.html)
+
+Still TODO from you: Letterboxd URL, cool links list.
+
+## Design notes
+
+Informed by utilitarian personal sites; default flavour is academic with dossier light/dark.
