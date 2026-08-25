@@ -4,3 +4,5 @@
 
 [build.environment]
   NODE_VERSION = "22"
+  # Site used to be Next.js; Netlify still auto-injects that runtime otherwise.
+  NETLIFY_NEXT_PLUGIN_SKIP = "true"
