@@ -2,7 +2,6 @@
   "use strict";
 
   var TONE_KEY = "hrushike_tone";
-  var HIT_KEY = "hrushike_hits";
   var DEFAULT_TONE = "dry";
 
   var toneData = {};
@@ -22,21 +21,6 @@
       var key = nodes[j].getAttribute("data-tone-text");
       if (pack[key] != null) nodes[j].textContent = pack[key];
     }
-  }
-
-  var baseEl = document.getElementById("hit-base");
-  var digitsEl = document.getElementById("hit-digits");
-  var base = baseEl ? parseInt(baseEl.getAttribute("data-base"), 10) || 0 : 0;
-  if (digitsEl) {
-    var n = 0;
-    try {
-      n = parseInt(localStorage.getItem(HIT_KEY), 10) || 0;
-      n += 1;
-      localStorage.setItem(HIT_KEY, String(n));
-    } catch (e) {
-      n = 1;
-    }
-    digitsEl.textContent = String(base + n).padStart(7, "0");
   }
 
   applyTone(DEFAULT_TONE);

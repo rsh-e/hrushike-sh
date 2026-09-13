@@ -6,7 +6,7 @@ Personal site for Hrushikesh Emkay (Rishi). Static HTML on Netlify. Utilitarian 
 
 ## Update content (no AI needed)
 
-1. Edit [`data/site.json`](data/site.json) — identity, contacts, `now`, `projects`, `links`, `resume`, `hitCounterBase`, `updated`.
+1. Edit [`data/site.json`](data/site.json) — identity, contacts, `projects`, `links`, `resume`, `updated`.
 2. Build:
 
 ```bash
@@ -46,18 +46,16 @@ npx serve dist -p 4173
 | `data/site.json` | **All** site copy |
 | `build.mjs` | Renders pages into `dist/` |
 | `static/css/site.css` | Styles |
-| `static/js/site.js` | Hit counter + keyboard easter eggs |
+| `static/js/site.js` | Keyboard shortcuts |
 | `static/fonts/` | CMU Serif + Typewriter |
 | `netlify.toml` | Build + publish dir |
 
 ## Themes & tones
 
-- **Themes** (`t` or `1`–`3`): **academic** / **dossier light** / **dossier dark**
 - Tone locked to **dry**
-- Lab: [/lab/dossier.html](/lab/dossier.html)
 
-Still TODO from you: Letterboxd URL, cool links list.
+Still TODO from you: cool links list.
 
 ## Design notes
 
-Informed by utilitarian personal sites; default flavour is academic with dossier light/dark.
+Informed by utilitarian personal sites; default flavour is academic.

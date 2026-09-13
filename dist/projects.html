@@ -8,10 +8,10 @@
   <meta name="author" content="Hrushikesh Emkay" />
   <link rel="canonical" href="https://hrushike.sh/projects.html" />
   <link rel="icon" href="/favicon.ico" />
-  <link rel="stylesheet" href="/css/site.css?v=20260825u" />
+  <link rel="stylesheet" href="/css/site.css?v=20260913ac" />
 </head>
 <body>
-  <nav class="nav"><div class="nav-links"><a href="/">index</a> · <a href="/now.html">now</a> · <span class="here">projects</span> · <a href="/reading.html">reading</a> · <a href="/links.html">links</a> · <a href="/resume.html">resume</a> · <a href="/colophon.html">colophon</a></div></nav>
+  <nav class="nav"><div class="nav-links"><a href="/">index</a> · <span class="here">projects</span> · <a href="/reading.html">reading</a> · <a href="/links.html">links</a> · <a href="/resume.html">resume</a> · <a href="https://github.com/rsh-e" target="_blank" rel="noopener">github</a></div></nav>
   <hr />
   
   <h1>Projects</h1>
@@ -29,52 +29,42 @@
     </tr>
 <tr>
       <td>2026</td>
-      <td>SEC 10-K RAG</td>
-      <td class="mono">wip</td>
-      <td>Parser and citation-aware chunker for annual filings (section + item). Eval harness for recall, precision, and MRR. Next: hybrid semantic + keyword search, re-ranking, then UI.<br /><span class="tagline">Fun, hard retrieval problem with a clear correctness bar.</span></td>
+      <td><a href="https://github.com/rsh-e/10k-rag-pipeline" target="_blank" rel="noopener">SEC 10-K AI RAG Pipeline</a></td>
+      <td class="mono">shipped</td>
+      <td>Citation-backed RAG over 10 SEC 10-K filings: custom HTML parser, hybrid search, cross-encoder reranking. 95-question eval — recall 63% → 83%. Python, ChromaDB, SQLite, Pandas.<br /><span class="tagline">Fun, hard retrieval problem with a clear correctness bar.</span></td>
     </tr>
 <tr>
       <td>2025</td>
-      <td>Distributed Game of Life</td>
+      <td><a href="https://github.com/rsh-e/cw-distributed" target="_blank" rel="noopener">Fault-Tolerant Distributed Game of Life</a></td>
       <td class="mono">shipped</td>
-      <td>Concurrency &amp; distributed systems coursework: Game of Life with halo exchange, fault tolerance, running concurrently across machines.<br /><span class="tagline">The first time distributed systems clicked as something you feel in the failure modes.</span></td>
+      <td>Multithreaded Game of Life in Go, distributed over AWS with gRPC. Benchmarked with benchstat; keeps running if a node dies.<br /><span class="tagline">The first time distributed systems clicked as something you feel in the failure modes.</span></td>
     </tr>
 <tr>
-      <td>2024</td>
-      <td>Scotland Yard AI</td>
+      <td>2025</td>
+      <td><a href="https://github.com/rsh-e/Scotland-YardAI" target="_blank" rel="noopener">Scotland Yard AI</a></td>
       <td class="mono">shipped</td>
-      <td>First-year Java project: MiniMax agents for detectives and Mr. X, search to depth ~8 with assorted optimisations.<br /><span class="tagline">A clean puzzle where search quality is the whole game.</span></td>
+      <td>Scotland Yard in Java with design patterns and a MiniMax AI. Optimisations took lookahead from 2 moves to 7.<br /><span class="tagline">A clean puzzle where search quality is the whole game.</span></td>
     </tr></tbody>
   </table>
 
   <p class="status-line">
-    last updated: <span>2026-08-25u</span>
-    &nbsp;·&nbsp;
-    <span class="hit-counter" id="hit-base" data-base="1337">
-      visitors: <span class="digits" id="hit-digits">0000000</span>
-    </span>
+    last updated: <span>2026-09-13ac</span>
   </p>
   
 <footer class="footer">
-  <div class="sitemap">sitemap: <a href="/">index</a> · <a href="/now.html">now</a> · <a href="/projects.html">projects</a> · <a href="/reading.html">reading</a> · <a href="/links.html">links</a> · <a href="/resume.html">resume</a> · <a href="/colophon.html">colophon</a></div>
-  <div class="buttons">
-    <a class="btn88" href="https://github.com/rsh-e" target="_blank" rel="noopener">GitHub</a>
-    <a class="btn88" href="/colophon.html">made w/ text</a>
-  </div>
+  <div class="sitemap">sitemap: <a href="/">index</a> · <a href="/projects.html">projects</a> · <a href="/reading.html">reading</a> · <a href="/links.html">links</a> · <a href="/resume.html">resume</a> · <a href="https://github.com/rsh-e" target="_blank" rel="noopener">github</a></div>
   <p>© 2026 Hrushikesh Emkay · <a href="https://hrushike.sh">hrushike.sh</a>
   · <kbd>?</kbd></p>
-  <p class="tagline" data-tone-text="footer"></p>
 </footer>
 <div id="shortcuts" class="shortcuts" aria-hidden="true">
   <div class="panel">
     <h2>Keyboard</h2>
     <p><kbd>?</kbd> — this panel</p>
-    <p>lab: <a href="/lab/dossier.html">dossier</a></p>
     <p><kbd>Esc</kbd> — close</p>
     <p><a href="#" onclick="document.getElementById('shortcuts').classList.remove('open');return false;">close</a></p>
   </div>
 </div>
-<script type="application/json" id="tone-data">{"optimistic":{"label":"optimistic","blurb":"Glad you found this. Things are being built.","footer":"thanks for visiting — go make something"},"deadpan":{"label":"deadpan","blurb":"Personal site. Facts below.","footer":"end of document"},"dry":{"label":"dry","blurb":"Another homepage on the internet. This one happens to be mine.","footer":"you know where the door is"},"earnest":{"label":"earnest","blurb":"I like hard problems, clean systems, and reading about the past.","footer":"always happy to talk about systems or history"}}</script>
-<script src="/js/site.js?v=20260825u" defer></script>
+<script type="application/json" id="tone-data">{"optimistic":{"label":"optimistic","blurb":"Glad you found this. Things are being built."},"deadpan":{"label":"deadpan","blurb":"Personal site. Facts below."},"dry":{"label":"dry","blurb":"Another homepage on the internet. This one happens to be mine."},"earnest":{"label":"earnest","blurb":"I like hard problems, clean systems, and reading about the past."}}</script>
+<script src="/js/site.js?v=20260913ac" defer></script>
 </body>
 </html>

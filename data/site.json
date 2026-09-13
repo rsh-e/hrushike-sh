@@ -1,6 +1,5 @@
 {
-  "updated": "2026-08-25u",
-  "hitCounterBase": 1337,
+  "updated": "2026-09-13ac",
   "domain": "https://hrushike.sh",
   "defaults": {
     "tone": "dry"
@@ -21,23 +20,15 @@
     "History"
   ],
   "stack": [
-    { "tools": "Python, Go", "role": "Backend / systems" },
-    { "tools": "Java", "role": "Coursework / AI projects" },
-    { "tools": "TypeScript, Next.js", "role": "Frontend when needed" }
+    { "tools": "Languages", "role": "Python, Java, Go, C, TypeScript/JavaScript, SQL" },
+    { "tools": "Frameworks", "role": "FastAPI, React, Next.js, PostgreSQL, ChromaDB, Pandas, Beautiful Soup" },
+    { "tools": "Systems/Tools", "role": "AWS, Terraform, Docker, gRPC, Git, Linux" }
   ],
   "contacts": {
     "github": "https://github.com/rsh-e",
     "medium": "https://rsh-emk.medium.com",
-    "x": "https://x.com/rsh_emk",
-    "letterboxd": "TODO"
+    "x": "https://x.com/rsh_emk"
   },
-  "now": [
-    "Summer — finishing a paid internship on Avon at Bristol CS",
-    "Building a RAG pipeline over SEC 10-K filings with grounded citations",
-    "Next up on that: hybrid search, re-ranking, then a proper frontend",
-    "Scored 1000/1000 on the AWS AI Practitioner exam",
-    "Reading Midnight's Children by Salman Rushdie"
-  ],
   "projects": [
     {
       "year": "2025–26",
@@ -49,26 +40,26 @@
     },
     {
       "year": "2026",
-      "name": "SEC 10-K RAG",
-      "status": "wip",
-      "blurb": "Parser and citation-aware chunker for annual filings (section + item). Eval harness for recall, precision, and MRR. Next: hybrid semantic + keyword search, re-ranking, then UI.",
-      "url": "#",
+      "name": "SEC 10-K AI RAG Pipeline",
+      "status": "shipped",
+      "blurb": "Citation-backed RAG over 10 SEC 10-K filings: custom HTML parser, hybrid search, cross-encoder reranking. 95-question eval — recall 63% → 83%. Python, ChromaDB, SQLite, Pandas.",
+      "url": "https://github.com/rsh-e/10k-rag-pipeline",
       "why": "Fun, hard retrieval problem with a clear correctness bar."
     },
     {
       "year": "2025",
-      "name": "Distributed Game of Life",
+      "name": "Fault-Tolerant Distributed Game of Life",
       "status": "shipped",
-      "blurb": "Concurrency & distributed systems coursework: Game of Life with halo exchange, fault tolerance, running concurrently across machines.",
-      "url": "#",
+      "blurb": "Multithreaded Game of Life in Go, distributed over AWS with gRPC. Benchmarked with benchstat; keeps running if a node dies.",
+      "url": "https://github.com/rsh-e/cw-distributed",
       "why": "The first time distributed systems clicked as something you feel in the failure modes."
     },
     {
-      "year": "2024",
+      "year": "2025",
       "name": "Scotland Yard AI",
       "status": "shipped",
-      "blurb": "First-year Java project: MiniMax agents for detectives and Mr. X, search to depth ~8 with assorted optimisations.",
-      "url": "#",
+      "blurb": "Scotland Yard in Java with design patterns and a MiniMax AI. Optimisations took lookahead from 2 moves to 7.",
+      "url": "https://github.com/rsh-e/Scotland-YardAI",
       "why": "A clean puzzle where search quality is the whole game."
     }
   ],
@@ -76,7 +67,12 @@
     {
       "year": "2026",
       "items": [
-        { "title": "Midnight's Children", "author": "Salman Rushdie", "status": "reading" }
+        { "title": "Midnight's Children", "author": "Salman Rushdie", "status": "reading" },
+        { "title": "Annihilation of Caste", "author": "B. R. Ambedkar", "status": "read" },
+        { "title": "The Prince", "author": "Niccolò Machiavelli", "status": "read" },
+        { "title": "Siddhartha", "author": "Hermann Hesse", "status": "read" },
+        { "title": "Giovanni's Room", "author": "James Baldwin", "status": "read" },
+        { "title": "The Death of Ivan Ilyich", "author": "Leo Tolstoy", "status": "read" }
       ]
     }
   ],
@@ -128,23 +124,19 @@
   "tones": {
     "optimistic": {
       "label": "optimistic",
-      "blurb": "Glad you found this. Things are being built.",
-      "footer": "thanks for visiting — go make something"
+      "blurb": "Glad you found this. Things are being built."
     },
     "deadpan": {
       "label": "deadpan",
-      "blurb": "Personal site. Facts below.",
-      "footer": "end of document"
+      "blurb": "Personal site. Facts below."
     },
     "dry": {
       "label": "dry",
-      "blurb": "Another homepage on the internet. This one happens to be mine.",
-      "footer": "you know where the door is"
+      "blurb": "Another homepage on the internet. This one happens to be mine."
     },
     "earnest": {
       "label": "earnest",
-      "blurb": "I like hard problems, clean systems, and reading about the past.",
-      "footer": "always happy to talk about systems or history"
+      "blurb": "I like hard problems, clean systems, and reading about the past."
     }
   }
 }
