@@ -26,32 +26,41 @@
   --accent-soft: #e8eef6;
   --body-font: "CMU Serif", "Times New Roman", Times, serif;
   --mono: "CMU Typewriter", "Courier New", Courier, monospace;
-  --fs: 18px;
+  --fs: 16px;
+  --fs-meta: 0.85rem;
   --lh: 1.4;
 }
 
-/* —— tones (micro-flavour on top of theme) —— */
-html[data-tone="optimistic"] {
-  --tone-shift: 1;
+html[data-font="cmu"] {
+  --body-font: "CMU Serif", "Times New Roman", Times, serif;
 }
 
-html[data-tone="deadpan"] h2 {
-  letter-spacing: 0.02em;
-  text-transform: none;
-  font-weight: 700;
+html[data-font="times"] {
+  --body-font: "Times New Roman", Times, serif;
 }
 
-html[data-tone="dry"] {
-  --lh: 1.28;
+html[data-font="palatino"] {
+  --body-font: Palatino, "Palatino Linotype", "Book Antiqua", serif;
 }
 
-html[data-tone="dry"] .tagline,
-html[data-tone="deadpan"] .tagline {
-  font-style: normal;
+html[data-font="georgia"] {
+  --body-font: Georgia, serif;
 }
 
-html[data-tone="earnest"] h1 {
-  letter-spacing: -0.01em;
+html[data-font="garamond"] {
+  --body-font: Garamond, "Apple Garamond", "Times New Roman", serif;
+}
+
+html[data-font="baskerville"] {
+  --body-font: Baskerville, "Baskerville Old Face", "Times New Roman", serif;
+}
+
+html[data-font="arial"] {
+  --body-font: Arial, Helvetica, sans-serif;
+}
+
+html[data-font="helvetica"] {
+  --body-font: Helvetica, Arial, sans-serif;
 }
 
 *,
@@ -102,7 +111,7 @@ table.dense th,
 }
 
 h1 {
-  font-size: clamp(1.75rem, 2.8vw, 2.15rem);
+  font-size: 1.75rem;
   font-weight: 400;
   margin: 0 0 0.4rem;
   letter-spacing: -0.01em;
@@ -134,18 +143,42 @@ hr {
 
 /* —— nav —— */
 .nav {
-  display: flex;
-  flex-direction: column;
-  gap: 0.3rem;
   margin: 0;
   color: var(--muted);
 }
 
+.nav-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem 1.25rem;
+  flex-wrap: wrap;
+}
+
 .nav-links {
-  font-size: 0.95rem;
+  font-size: 1rem;
   white-space: nowrap;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
+}
+
+.font-switch {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-family: var(--mono);
+  font-size: 1rem;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.font-switch select {
+  font-family: inherit;
+  font-size: 1rem;
+  color: var(--fg);
+  background: var(--bg);
+  border: 1px solid var(--rule);
+  padding: 0.05rem 0.25rem;
 }
 
 .nav a {
@@ -161,7 +194,6 @@ hr {
 .tagline {
   color: var(--muted);
   margin: 0 0 0.4rem;
-  font-size: 0.92rem;
 }
 
 /* —— home: use the width —— */
@@ -218,7 +250,7 @@ hr {
 
 .gazette-title {
   font-family: var(--body-font);
-  font-size: 1.05rem;
+  font-size: 1rem;
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -226,7 +258,7 @@ hr {
 }
 
 .gazette-sub {
-  font-size: 0.68rem;
+  font-size: var(--fs-meta);
   color: var(--muted);
   margin-top: 0.15rem;
   letter-spacing: 0.04em;
@@ -267,7 +299,7 @@ hr {
 }
 
 .gazette-photo figcaption {
-  font-size: 0.62rem;
+  font-size: var(--fs-meta);
   color: var(--muted);
   margin-top: 0.25rem;
   line-height: 1.25;
@@ -286,7 +318,7 @@ hr {
 
 .headline .hed {
   font-family: var(--body-font);
-  font-size: 1.05rem;
+  font-size: 1rem;
   font-weight: 700;
   letter-spacing: 0.01em;
   line-height: 1.35;
@@ -305,7 +337,7 @@ hr {
 
 .headline .dateline {
   font-family: var(--mono);
-  font-size: 0.7rem;
+  font-size: var(--fs-meta);
   color: var(--muted);
   text-transform: uppercase;
   letter-spacing: 0.06em;
@@ -316,7 +348,7 @@ hr {
   padding: 0.3rem 0.5rem 0.35rem;
   border-top: 1px solid var(--rule);
   margin: 0;
-  font-size: 0.68rem;
+  font-size: var(--fs-meta);
   color: var(--muted);
   font-family: var(--mono);
   flex: 0 0 auto;
@@ -354,7 +386,6 @@ table.dense {
 .stack dt {
   font-family: var(--mono);
   color: var(--muted);
-  font-size: 16px;
   margin: 0.55rem 0 0.05rem;
 }
 
@@ -364,7 +395,6 @@ table.dense {
 
 .stack dd {
   margin: 0;
-  font-size: 15px;
 }
 
 table.dense th,
@@ -382,6 +412,15 @@ table.dense th {
   white-space: nowrap;
 }
 
+table.resume {
+  table-layout: fixed;
+}
+
+table.resume th {
+  width: 14rem;
+  padding-right: 1.25rem;
+}
+
 table.list th {
   width: auto;
   color: var(--fg);
@@ -395,6 +434,29 @@ table.list th {
   padding: 0.2rem 0.55rem 0.2rem 0;
 }
 
+table.projects td,
+table.projects th {
+  padding: 0.7rem 1.25rem 0.7rem 0;
+  line-height: 1.4;
+}
+
+table.projects th:nth-child(1),
+table.projects td:nth-child(1) {
+  white-space: nowrap;
+  width: 5.5rem;
+}
+
+table.projects th:nth-child(2),
+table.projects td:nth-child(2) {
+  width: 17rem;
+}
+
+table.projects th:nth-child(3),
+table.projects td:nth-child(3) {
+  white-space: nowrap;
+  width: 6.5rem;
+}
+
 ul.plain {
   margin: 0;
   padding-left: 1.05rem;
@@ -405,7 +467,7 @@ ul.plain li {
 }
 
 .status-line {
-  font-size: 0.78rem;
+  font-size: var(--fs-meta);
   color: var(--muted);
   margin-top: 0.85rem;
 }
@@ -414,7 +476,7 @@ ul.plain li {
   margin-top: 0.75rem;
   padding-top: 0.45rem;
   border-top: 1px solid var(--rule);
-  font-size: 0.78rem;
+  font-size: var(--fs-meta);
   color: var(--muted);
 }
 
@@ -439,7 +501,6 @@ ul.plain li {
 .todo {
   color: #a60;
   font-family: var(--mono);
-  font-size: 0.9em;
 }
 
 .shortcuts {
@@ -499,10 +560,6 @@ ul.plain li {
 }
 
 @media (max-width: 560px) {
-  html {
-    font-size: 15px;
-  }
-
   body {
     padding: 0.55rem 0.65rem 0.85rem;
   }
@@ -515,11 +572,15 @@ ul.plain li {
     width: 5.75rem;
   }
 
+  table.resume th {
+    width: 12rem;
+  }
+
   .nav-links {
     white-space: nowrap;
   }
 
   h1 {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
   }
 }

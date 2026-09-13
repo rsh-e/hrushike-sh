@@ -1,9 +1,5 @@
 {
-  "updated": "2026-09-13ac",
   "domain": "https://hrushike.sh",
-  "defaults": {
-    "tone": "dry"
-  },
   "identity": {
     "name": "Hrushikesh Emkay",
     "aka": "Rishi",
@@ -11,17 +7,17 @@
     "program": "MEng Computer Science",
     "year": "3rd year",
     "location": "Bristol, UK",
-    "tagline": "Systems, software, and a soft spot for history."
+    "tagline": ""
   },
   "interests": [
     "Concurrency and distributed systems",
-    "Technology in business",
-    "Finance, strategy and operations",
-    "History"
+    "AI engineering",
+    "History",
+    "Economics"
   ],
   "stack": [
     { "tools": "Languages", "role": "Python, Java, Go, C, TypeScript/JavaScript, SQL" },
-    { "tools": "Frameworks", "role": "FastAPI, React, Next.js, PostgreSQL, ChromaDB, Pandas, Beautiful Soup" },
+    { "tools": "Frameworks", "role": "FastAPI, React, Next.js, PostgreSQL, ChromaDB, Pandas, BeautifulSoup" },
     { "tools": "Systems/Tools", "role": "AWS, Terraform, Docker, gRPC, Git, Linux" }
   ],
   "contacts": {
@@ -31,28 +27,20 @@
   },
   "projects": [
     {
-      "year": "2025–26",
-      "name": "Avon",
-      "status": "shipped / ongoing",
-      "blurb": "Git-based coursework platform for Bristol CS: lecturers upload a skeleton zip, every student gets a provisioned repo, tests run at the deadline. Integrates with Blackboard, Moodle, and Canvas — kills the download-zip / upload-zip / something-breaks loop.",
-      "url": "https://github.com/avon-vle/avon",
-      "why": "Challenging systems work that makes coursework less painful for everyone involved."
-    },
-    {
       "year": "2026",
       "name": "SEC 10-K AI RAG Pipeline",
       "status": "shipped",
-      "blurb": "Citation-backed RAG over 10 SEC 10-K filings: custom HTML parser, hybrid search, cross-encoder reranking. 95-question eval — recall 63% → 83%. Python, ChromaDB, SQLite, Pandas.",
+      "blurb": "A citation-backed RAG system for querying SEC 10-K filings using hybrid retrieval, Reciprocal Rank Fusion (RRF), cross-encoder reranking, and domain-specific routing",
       "url": "https://github.com/rsh-e/10k-rag-pipeline",
-      "why": "Fun, hard retrieval problem with a clear correctness bar."
+      "why": ""
     },
     {
       "year": "2025",
-      "name": "Fault-Tolerant Distributed Game of Life",
+      "name": "Fault-Tolerant Multithreaded Distributed Game of Life",
       "status": "shipped",
-      "blurb": "Multithreaded Game of Life in Go, distributed over AWS with gRPC. Benchmarked with benchstat; keeps running if a node dies.",
+      "blurb": "Fault Tolerant Multithreaded Game of Life in Go, distributed over AWS with gRPC. Benchmarked with benchstat; keeps running if a node dies.",
       "url": "https://github.com/rsh-e/cw-distributed",
-      "why": "The first time distributed systems clicked as something you feel in the failure modes."
+      "why": ""
     },
     {
       "year": "2025",
@@ -60,7 +48,7 @@
       "status": "shipped",
       "blurb": "Scotland Yard in Java with design patterns and a MiniMax AI. Optimisations took lookahead from 2 moves to 7.",
       "url": "https://github.com/rsh-e/Scotland-YardAI",
-      "why": "A clean puzzle where search quality is the whole game."
+      "why": ""
     }
   ],
   "reading": [
@@ -78,65 +66,85 @@
   ],
   "links": [
     {
-      "title": "TODO — add links you actually send people",
-      "url": "#",
-      "note": "Remind Rishi later"
+      "title": "“God has helped us, and so will AI”: How the Terrorist Group Boko Haram Uses Frontier AI",
+      "url": "https://casp.ac/reports/ai-enabled-terrorism"
+    },
+    {
+      "title": "Rice-Fish Farming",
+      "url": "https://en.wikipedia.org/wiki/Rice%E2%80%93fish_system"
+    },
+    {
+      "title": "Competition is for Losers -- Peter Thiel",
+      "url": "https://www.csun.edu/~vcact00f/497CapStone/Peter%20Thiel_%20Competition%20Is%20for%20Losers%20-%20WSJ.pdf"
+    },
+    {
+      "title": "Josh Jenkins, one of the smartest developers I know",
+      "url": "https://jooo.sh/"
+    },
+    {
+      "title": "Christopher Nolan talks narrative decisions, film critics and whether he Christianised The Odyssey",
+      "url": "https://www.youtube.com/watch?v=wa4I8Ch2TRo"
+    },
+    {
+      "title": "The Oven of Akhnai",
+      "url": "https://en.wikipedia.org/wiki/The_Oven_of_Akhnai"
+    },
+    {
+      "title": "We must pace the frontier -- Dario Amodei",
+      "url": "https://darioamodei.com/post/we-must-pace-the-frontier"
+    },
+    {
+      "title": "Learn Kernels Book",
+      "url": "https://learn-kernels.com/"
+    },
+    {
+      "title": "The Straussian Moment -- Peter Thiel",
+      "url": "https://gwern.net/doc/politics/2007-thiel.pdf"
+    },
+    {
+      "title": "CIA Declassified Documents",
+      "url": "https://www.cia.gov/readingroom/search/site"
     }
   ],
   "resume": {
     "education": [
       {
-        "when": "2024 — present",
+        "when": "Sep 2024 — Jun 2028",
         "where": "University of Bristol",
-        "what": "MEng Computer Science (3rd year)",
-        "detail": "Year 2 average: 76%."
+        "what": "MEng Computer Science",
+        "detail": "(Year 2 Overall Average: 76%)"
       }
     ],
     "experience": [
       {
-        "when": "Jun 2025 — Aug 2025",
+        "when": "Jun 2026 — Sep 2026",
         "where": "School of Computer Science, University of Bristol",
-        "what": "Software engineering intern (Avon)",
-        "detail": "Built and shipped Avon, a VLE-integrated Git coursework platform. Earlier part-time work on the same project Oct 2024 – Jun 2025."
+        "what": "Software Engineering Intern",
+        "detail": ""
       },
       {
-        "when": "2024 — 2025",
-        "where": "Data Annotation",
-        "what": "RLHF / model training (programming)",
-        "detail": "Reinforcement learning from human feedback work training frontier models on programming tasks."
+        "when": "Oct 2025 — Jun 2025",
+        "where": "School of Computer Science, University of Bristol",
+        "what": "Software Engineering Volunteer",
+        "detail": ""
       },
       {
-        "when": "2024 — present",
-        "where": "University of Bristol Hindu Society",
-        "what": "Sanskar (Cultural Representative)",
-        "detail": "Organised and hosted discussions on Buddhism with strong turnout."
+        "when": "Oct 2024 — Jan 2025",
+        "where": "180 Degrees Consulting",
+        "what": "Strategy Consultant",
+        "detail": "" 
+      },
+      {
+        "when": "Feb 2024 — present",
+        "where": "DataAnnotation",
+        "what": "RLHF / Model training (programming)",
+        "detail": ""
+      },
+      {
+        "when": "May 2022 - Jun 2024",
+        "where": "Private",
+        "what": "Tutoring"
       }
-    ],
-    "skills": [
-      "Python",
-      "Java",
-      "Go",
-      "TypeScript",
-      "Distributed systems",
-      "Project leadership"
     ]
-  },
-  "tones": {
-    "optimistic": {
-      "label": "optimistic",
-      "blurb": "Glad you found this. Things are being built."
-    },
-    "deadpan": {
-      "label": "deadpan",
-      "blurb": "Personal site. Facts below."
-    },
-    "dry": {
-      "label": "dry",
-      "blurb": "Another homepage on the internet. This one happens to be mine."
-    },
-    "earnest": {
-      "label": "earnest",
-      "blurb": "I like hard problems, clean systems, and reading about the past."
-    }
   }
 }

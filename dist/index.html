@@ -1,23 +1,45 @@
 <!DOCTYPE html>
-<html lang="en" data-tone="dry">
+<html lang="en" data-font="cmu">
 <head>
   <meta charset="utf-8" />
+  <script>
+    (function () {
+      try {
+        var f = localStorage.getItem("hrushike_font");
+        if (f) document.documentElement.setAttribute("data-font", f);
+      } catch (e) {}
+    })();
+  </script>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Rishi's Website</title>
-  <meta name="description" content="Systems, software, and a soft spot for history." />
+  <meta name="description" content="" />
   <meta name="author" content="Hrushikesh Emkay" />
   <link rel="canonical" href="https://hrushike.sh/" />
   <link rel="icon" href="/favicon.ico" />
-  <link rel="stylesheet" href="/css/site.css?v=20260913ac" />
+  <link rel="stylesheet" href="/css/site.css?v=feca592d1789309529478" />
 </head>
 <body>
-  <nav class="nav"><div class="nav-links"><span class="here">index</span> · <a href="/projects.html">projects</a> · <a href="/reading.html">reading</a> · <a href="/links.html">links</a> · <a href="/resume.html">resume</a> · <a href="https://github.com/rsh-e" target="_blank" rel="noopener">github</a></div></nav>
+  <nav class="nav"><div class="nav-bar">
+    <div class="nav-links"><span class="here">index</span> · <a href="/projects.html">projects</a> · <a href="/reading.html">reading</a> · <a href="/links.html">links</a> · <a href="/resume.html">resume</a> · <a href="https://github.com/rsh-e" target="_blank" rel="noopener">github</a></div>
+    <label class="font-switch">font
+      <select id="font-select" aria-label="Typeface">
+        <option value="cmu">Computer Modern</option>
+        <option value="times">Times New Roman</option>
+        <option value="palatino">Palatino</option>
+        <option value="georgia">Georgia</option>
+        <option value="garamond">Garamond</option>
+        <option value="baskerville">Baskerville</option>
+        <option value="arial">Arial</option>
+        <option value="helvetica">Helvetica</option>
+      </select>
+    </label>
+  </div></nav>
   <hr />
   
   <div class="home">
     <div class="home-main">
       <h1>Hrushikesh Emkay</h1>
-      <p class="tagline" data-tone-text="blurb"></p>
+      <p class="tagline"></p>
       <table class="dense">
         <tr><th>Studies</th><td>MEng Computer Science, 3rd year · University of Bristol</td></tr>
         <tr><th>Location</th><td>Bristol, UK</td></tr>
@@ -43,21 +65,21 @@
         <p class="field-note">wikimedia · on this day</p>
       </aside>
       <p class="status-line">
-    last updated: <span>2026-09-13ac</span>
+    last updated: <span>2026-09-13</span>
   </p>
     </div>
     <div class="home-side">
       <div class="home-block">
         <h2>Interests</h2>
         <ul class="plain"><li>Concurrency and distributed systems</li>
-<li>Technology in business</li>
-<li>Finance, strategy and operations</li>
-<li>History</li></ul>
+<li>AI engineering</li>
+<li>History</li>
+<li>Economics</li></ul>
       </div>
       <div class="home-block">
         <h2>Stack</h2>
         <dl class="stack"><dt>Languages</dt><dd>Python, Java, Go, C, TypeScript/JavaScript, SQL</dd>
-<dt>Frameworks</dt><dd>FastAPI, React, Next.js, PostgreSQL, ChromaDB, Pandas, Beautiful Soup</dd>
+<dt>Frameworks</dt><dd>FastAPI, React, Next.js, PostgreSQL, ChromaDB, Pandas, BeautifulSoup</dd>
 <dt>Systems/Tools</dt><dd>AWS, Terraform, Docker, gRPC, Git, Linux</dd></dl>
       </div>
       <div class="home-block home-block-end">
@@ -65,7 +87,7 @@
         <table class="dense">
           <tr><th><a href="/projects.html">/projects</a></th><td>Things I’ve built</td></tr>
           <tr><th><a href="/reading.html">/reading</a></th><td>Books by year</td></tr>
-          <tr><th><a href="/links.html">/links</a></th><td>Worth sending people</td></tr>
+          <tr><th><a href="/links.html">/links</a></th><td>Interesting things I've found</td></tr>
           <tr><th><a href="/resume.html">/resume</a></th><td>Education &amp; experience</td></tr>
         </table>
       </div>
@@ -87,7 +109,6 @@
     <p><a href="#" onclick="document.getElementById('shortcuts').classList.remove('open');return false;">close</a></p>
   </div>
 </div>
-<script type="application/json" id="tone-data">{"optimistic":{"label":"optimistic","blurb":"Glad you found this. Things are being built."},"deadpan":{"label":"deadpan","blurb":"Personal site. Facts below."},"dry":{"label":"dry","blurb":"Another homepage on the internet. This one happens to be mine."},"earnest":{"label":"earnest","blurb":"I like hard problems, clean systems, and reading about the past."}}</script>
-<script src="/js/site.js?v=20260913ac" defer></script>
+<script src="/js/site.js?v=feca592d1789309529478" defer></script>
 </body>
 </html>

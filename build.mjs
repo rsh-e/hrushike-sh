@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { execSync } from "node:child_process";
 import { readFileSync, writeFileSync, mkdirSync, cpSync, rmSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -7,9 +8,28 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = __dirname;
 const DIST = join(ROOT, "dist");
 const DATA = JSON.parse(readFileSync(join(ROOT, "data/site.json"), "utf8"));
-const ASSET_V = DATA.updated.replace(/[^0-9a-z]/gi, "") || "1";
-const DEFAULT_TONE = DATA.defaults?.tone || "dry";
 
+function gitMeta() {
+  try {
+    const [hash, date] = execSync("git log -1 --format=%h%n%cs", {
+      cwd: ROOT,
+      encoding: "utf8",
+    })
+      .trim()
+      .split("\n");
+    const dirty = execSync("git status --porcelain", { cwd: ROOT, encoding: "utf8" }).trim();
+    return {
+      date: date || "",
+      // ponytail: dirty tree gets a unique query so local CSS/JS isn't stuck behind the last commit hash
+      hash: dirty ? `${hash || "1"}d${Date.now()}` : hash || "1",
+    };
+  } catch {
+    return { date: "", hash: "1" };
+  }
+}
+
+const GIT = gitMeta();
+const ASSET_V = GIT.hash;
 const PAGES = [
   { id: "index", href: "/", file: "index.html", label: "index" },
   { id: "projects", href: "/projects.html", file: "projects.html", label: "projects" },
@@ -49,18 +69,31 @@ function nav(active) {
     return `<a href="${p.href}">${p.label}</a>`;
   }).join(" · ");
 
-  return `<div class="nav-links">${links} · ${githubLink()}</div>`;
+  return `<div class="nav-bar">
+    <div class="nav-links">${links} · ${githubLink()}</div>
+    <label class="font-switch">font
+      <select id="font-select" aria-label="Typeface">
+        <option value="cmu">Computer Modern</option>
+        <option value="times">Times New Roman</option>
+        <option value="palatino">Palatino</option>
+        <option value="georgia">Georgia</option>
+        <option value="garamond">Garamond</option>
+        <option value="baskerville">Baskerville</option>
+        <option value="arial">Arial</option>
+        <option value="helvetica">Helvetica</option>
+      </select>
+    </label>
+  </div>`;
 }
 
 function statusLineHtml() {
   return `<p class="status-line">
-    last updated: <span>${esc(DATA.updated)}</span>
+    last updated: <span>${esc(GIT.date)}</span>
   </p>`;
 }
 
 function footer() {
   const sitemap = PAGES.map((p) => `<a href="${p.href}">${p.label}</a>`).join(" · ") + ` · ${githubLink()}`;
-  const toneJson = JSON.stringify(DATA.tones);
   return `
 <footer class="footer">
   <div class="sitemap">sitemap: ${sitemap}</div>
@@ -75,7 +108,6 @@ function footer() {
     <p><a href="#" onclick="document.getElementById('shortcuts').classList.remove('open');return false;">close</a></p>
   </div>
 </div>
-<script type="application/json" id="tone-data">${toneJson}</script>
 <script src="/js/site.js?v=${ASSET_V}" defer></script>`;
 }
 
@@ -84,9 +116,17 @@ function shell({ title, active, body, description }) {
     title === "index" ? `${DATA.identity.aka}'s Website` : `${title} · ${DATA.identity.aka}`;
   const desc = description || DATA.identity.tagline;
   return `<!DOCTYPE html>
-<html lang="en" data-tone="${esc(DEFAULT_TONE)}">
+<html lang="en" data-font="cmu">
 <head>
   <meta charset="utf-8" />
+  <script>
+    (function () {
+      try {
+        var f = localStorage.getItem("hrushike_font");
+        if (f) document.documentElement.setAttribute("data-font", f);
+      } catch (e) {}
+    })();
+  </script>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>${esc(pageTitle)}</title>
   <meta name="description" content="${esc(desc)}" />
@@ -121,7 +161,7 @@ function pageIndex() {
   <div class="home">
     <div class="home-main">
       <h1>${esc(id.name)}</h1>
-      <p class="tagline" data-tone-text="blurb"></p>
+      <p class="tagline">${esc(id.tagline)}</p>
       <table class="dense">
         <tr><th>Studies</th><td>${esc(id.program)}, ${esc(id.year)} · ${esc(id.school)}</td></tr>
         <tr><th>Location</th><td>${esc(id.location)}</td></tr>
@@ -162,7 +202,7 @@ function pageIndex() {
         <table class="dense">
           <tr><th><a href="/projects.html">/projects</a></th><td>Things I’ve built</td></tr>
           <tr><th><a href="/reading.html">/reading</a></th><td>Books by year</td></tr>
-          <tr><th><a href="/links.html">/links</a></th><td>Worth sending people</td></tr>
+          <tr><th><a href="/links.html">/links</a></th><td>Interesting things I've found</td></tr>
           <tr><th><a href="/resume.html">/resume</a></th><td>Education &amp; experience</td></tr>
         </table>
       </div>
@@ -194,9 +234,9 @@ function pageProjects() {
     description: `Projects by ${DATA.identity.name}`,
     body: `
   <h1>Projects</h1>
-  <p class="tagline">ECS work, systems coursework, and what’s on the bench now.</p>
+  <p class="tagline">Stuff I've been working on</p>
   <hr />
-  <table class="dense list">
+  <table class="dense list projects">
     <thead>
       <tr><th>Year</th><th>Name</th><th>Status</th><th>Notes</th></tr>
     </thead>
@@ -242,12 +282,13 @@ function pageReading() {
 
 function pageLinks() {
   const rows = DATA.links
+    .toReversed()
     .map((l) => {
       const title =
         !l.url || l.url === "#"
           ? markTodo(l.title)
           : `<a href="${esc(l.url)}" target="_blank" rel="noopener">${markTodo(l.title)}</a>`;
-      return `<tr><td>${title}</td><td>${markTodo(l.note)}</td></tr>`;
+      return `<tr><td>${title}</td></tr>`;
     })
     .join("\n");
 
@@ -257,10 +298,9 @@ function pageLinks() {
     description: "Cool links",
     body: `
   <h1>Links</h1>
-  <p class="tagline">Placeholder until you dictate the ones you actually send. Reminder noted.</p>
+  <p class="tagline">Interesting things I've found.</p>
   <hr />
   <table class="dense list">
-    <thead><tr><th>Site</th><th>Why</th></tr></thead>
     <tbody>${rows}</tbody>
   </table>
 `,
@@ -272,7 +312,7 @@ function pageResume() {
     .map(
       (e) => `<tr>
       <th>${esc(e.when)}</th>
-      <td><strong>${esc(e.where)}</strong><br />${esc(e.what)}<br /><span class="tagline">${esc(e.detail)}</span></td>
+      <td><strong>${esc(e.where)}</strong><br />${esc(e.what)}${e.detail ? ` <span class="tagline">${esc(e.detail)}</span>` : ""}</td>
     </tr>`
     )
     .join("\n");
@@ -281,12 +321,10 @@ function pageResume() {
     .map(
       (e) => `<tr>
       <th>${esc(e.when)}</th>
-      <td><strong>${esc(e.where)}</strong><br />${esc(e.what)}<br /><span class="tagline">${esc(e.detail)}</span></td>
+      <td><strong>${esc(e.what)}</strong><br />${esc(e.where)}${e.detail ? `<br /><span class="tagline">${esc(e.detail)}</span>` : ""}</td>
     </tr>`
     )
     .join("\n");
-
-  const skills = DATA.resume.skills.map((s) => esc(s)).join(" · ");
 
   return shell({
     title: "resume",
@@ -297,11 +335,9 @@ function pageResume() {
   <p class="tagline">${esc(DATA.identity.name)} · ${esc(DATA.identity.aka)}</p>
   <hr />
   <h2>Education</h2>
-  <table class="dense">${edu}</table>
+  <table class="dense resume">${edu}</table>
   <h2>Experience</h2>
-  <table class="dense">${exp}</table>
-  <h2>Skills</h2>
-  <p class="mono">${skills}</p>
+  <table class="dense resume">${exp}</table>
 `,
   });
 }
@@ -314,7 +350,7 @@ Site: ${DATA.domain}
 GitHub: ${DATA.contacts.github}
 
 /* SITE */
-Last update: ${DATA.updated}
+Last update: ${GIT.date}
 Standards: HTML5, CSS3
 Software: bun, Netlify, a text editor
 `;

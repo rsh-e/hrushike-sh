@@ -6,7 +6,8 @@ Personal site for Hrushikesh Emkay (Rishi). Static HTML on Netlify. Utilitarian 
 
 ## Update content (no AI needed)
 
-1. Edit [`data/site.json`](data/site.json) — identity, contacts, `projects`, `links`, `resume`, `updated`.
+1. Edit [`data/site.json`](data/site.json) — identity, contacts, `projects`, `links`, `resume`.
+   Last-updated is the date of the latest git commit (same as the last Netlify deploy).
 2. Build:
 
 ```bash
@@ -35,9 +36,11 @@ Rows whose name/blurb contain `TODO` render in amber so placeholders are obvious
 ## Local preview
 
 ```bash
-bun run build
-npx serve dist -p 4173
+bun run dev
+# or: npm run dev
 ```
+
+Builds, serves `dist/` at http://localhost:4173, and rebuilds when `data/`, `static/`, or `build.mjs` change.
 
 ## Layout
 
@@ -50,11 +53,9 @@ npx serve dist -p 4173
 | `static/fonts/` | CMU Serif + Typewriter |
 | `netlify.toml` | Build + publish dir |
 
-## Themes & tones
+Homepage line: `identity.tagline` in `data/site.json`.
 
-- Tone locked to **dry**
-
-Still TODO from you: cool links list.
+Add more links in `data/site.json` when you have them.
 
 ## Design notes
 

@@ -1,29 +1,29 @@
 (function () {
   "use strict";
 
-  var TONE_KEY = "hrushike_tone";
-  var DEFAULT_TONE = "dry";
+  var FONT_KEY = "hrushike_font";
+  var FONTS = ["cmu", "times", "palatino", "georgia", "garamond", "baskerville", "arial", "helvetica"];
+  var fontSelect = document.getElementById("font-select");
 
-  var toneData = {};
-  try {
-    var el = document.getElementById("tone-data");
-    if (el) toneData = JSON.parse(el.textContent);
-  } catch (e) {}
-
-  function applyTone(name) {
-    document.documentElement.setAttribute("data-tone", name);
+  function applyFont(name) {
+    if (FONTS.indexOf(name) === -1) name = "cmu";
+    document.documentElement.setAttribute("data-font", name);
     try {
-      localStorage.setItem(TONE_KEY, name);
+      localStorage.setItem(FONT_KEY, name);
     } catch (e) {}
-    var pack = toneData[name] || {};
-    var nodes = document.querySelectorAll("[data-tone-text]");
-    for (var j = 0; j < nodes.length; j++) {
-      var key = nodes[j].getAttribute("data-tone-text");
-      if (pack[key] != null) nodes[j].textContent = pack[key];
-    }
+    if (fontSelect) fontSelect.value = name;
   }
 
-  applyTone(DEFAULT_TONE);
+  var saved = "cmu";
+  try {
+    saved = localStorage.getItem(FONT_KEY) || "cmu";
+  } catch (e) {}
+  applyFont(saved);
+  if (fontSelect) {
+    fontSelect.addEventListener("change", function () {
+      applyFont(fontSelect.value);
+    });
+  }
 
   var overlay = document.getElementById("shortcuts");
   if (overlay) {
