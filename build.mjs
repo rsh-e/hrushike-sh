@@ -201,7 +201,7 @@ function pageIndex() {
         <h2>Index</h2>
         <table class="dense">
           <tr><th><a href="/projects.html">/projects</a></th><td>Things I’ve built</td></tr>
-          <tr><th><a href="/reading.html">/reading</a></th><td>Books by year</td></tr>
+          <tr><th><a href="/reading.html">/reading</a></th><td>Books I've read</td></tr>
           <tr><th><a href="/links.html">/links</a></th><td>Interesting things I've found</td></tr>
           <tr><th><a href="/resume.html">/resume</a></th><td>Education &amp; experience</td></tr>
         </table>
@@ -223,7 +223,7 @@ function pageProjects() {
       <td>${esc(p.year)}</td>
       <td>${link}</td>
       <td class="mono">${esc(p.status)}</td>
-      <td>${esc(p.blurb)}${p.why ? `<br /><span class="tagline">${esc(p.why)}</span>` : ""}</td>
+      <td class="project-desc">${esc(p.blurb)}${p.why ? `<br /><span class="tagline">${esc(p.why)}</span>` : ""}</td>
     </tr>`;
     })
     .join("\n");
@@ -238,7 +238,7 @@ function pageProjects() {
   <hr />
   <table class="dense list projects">
     <thead>
-      <tr><th>Year</th><th>Name</th><th>Status</th><th>Notes</th></tr>
+      <tr><th>Year</th><th>Name</th><th>Status</th><th>Description</th></tr>
     </thead>
     <tbody>${rows}</tbody>
   </table>
@@ -273,7 +273,6 @@ function pageReading() {
     description: "Reading list",
     body: `
   <h1>Reading</h1>
-  <p class="tagline">Books by year.</p>
   <hr />
   ${sections}
 `,
@@ -329,10 +328,9 @@ function pageResume() {
   return shell({
     title: "resume",
     active: "resume",
-    description: `Resume — ${DATA.identity.name}`,
+    description: "Resume",
     body: `
   <h1>Resume</h1>
-  <p class="tagline">${esc(DATA.identity.name)} · ${esc(DATA.identity.aka)}</p>
   <hr />
   <h2>Education</h2>
   <table class="dense resume">${edu}</table>

@@ -457,6 +457,47 @@ table.projects td:nth-child(3) {
   width: 6.5rem;
 }
 
+@media (max-width: 820px) {
+  table.projects thead,
+  table.projects tbody,
+  table.projects {
+    display: block;
+    width: 100%;
+  }
+
+  table.projects thead tr,
+  table.projects tbody tr {
+    display: grid;
+    grid-template-columns: 4.75rem 1fr auto;
+    column-gap: 0.65rem;
+    align-items: start;
+    border-bottom: 1px solid var(--rule);
+    padding: 0.85rem 0;
+  }
+
+  table.projects th,
+  table.projects th:nth-child(1),
+  table.projects th:nth-child(2),
+  table.projects th:nth-child(3),
+  table.projects td,
+  table.projects td:nth-child(1),
+  table.projects td:nth-child(2),
+  table.projects td:nth-child(3) {
+    width: auto;
+    border: 0;
+    padding: 0;
+  }
+
+  table.projects thead th:nth-child(4) {
+    display: none;
+  }
+
+  table.projects td.project-desc {
+    grid-column: 1 / -1;
+    padding-top: 0.55rem;
+  }
+}
+
 ul.plain {
   margin: 0;
   padding-left: 1.05rem;
